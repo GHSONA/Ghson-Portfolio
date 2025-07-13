@@ -1,11 +1,25 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Ghson Alotibi - Data Science & Business Portfolio</title>
-...
-<div class="logo">Ghson Alotibi</div>
+    <title>Ghson Alotibi - Data Science & Business Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Fallback for missing icons */
+        .fa-envelope::before { content: "✉️"; }
+        .fa-linkedin::before { content: "💼"; }
+        .fa-github::before { content: "🔧"; }
+        .fa-phone::before { content: "📞"; }
+        .fa-download::before { content: "⬇️"; }
+        .fa-eye::before { content: "👁️"; }
+        .fa-chart-line::before { content: "📈"; }
+        .fa-brain::before { content: "🧠"; }
+        .fa-chart-bar::before { content: "📊"; }
+        .fa-database::before { content: "🗄️"; }
+        .fa-home::before { content: "🏠"; }
+        .fa-globe::before { content: "🌐"; }
+    </style>
     <style>
         * {
             margin: 0;
@@ -65,6 +79,20 @@
 
         .nav-links a:hover {
             color: #667eea;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
         }
 
         main {
@@ -180,6 +208,11 @@
             border-radius: 10px;
             text-align: center;
             font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-3px);
         }
 
         .resume-section {
@@ -202,6 +235,66 @@
         .resume-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .resume-details {
+            max-width: 800px;
+            margin: 2rem auto;
+            text-align: left;
+        }
+
+        .resume-section-title {
+            font-size: 1.8rem;
+            color: #667eea;
+            margin: 2rem 0 1rem 0;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .item-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .item-company {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .item-date {
+            color: #666;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .item-description {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .item-description ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .item-description li {
+            margin-bottom: 0.3rem;
         }
 
         .projects-grid {
@@ -349,6 +442,10 @@
                 display: none;
             }
 
+            .mobile-menu {
+                display: flex;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -360,6 +457,15 @@
 
             .projects-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .item-date {
+                margin-top: 0.5rem;
             }
         }
     </style>
@@ -374,13 +480,18 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
     <main>
         <section class="hero">
             <div class="container">
-               <h1>Data Scientist & Business Strategist</h1>
+                <h1>Data Scientist & Business Strategist</h1>
                 <p>Blending data, strategy, and innovation to solve real-world problems</p>
                 <a href="#projects" class="btn">View My Work</a>
             </div>
@@ -390,49 +501,131 @@
             <section id="about" class="content-section">
                 <h2 class="section-title">About Me</h2>
                 <div class="about-content">
-                   <img src="https://via.placeholder.com/250x250/667eea/ffffff?text=Ghson.jpg" alt="Your Name" class="profile-img">
+                    <img src="https://via.placeholder.com/250x250/667eea/ffffff?text=GA" alt="Ghson Alotibi" class="profile-img">
                     <div class="about-text">
-                 <h3>My Journey into Data Science</h3>
-<p>
-Hi, I'm Ghson Alotibi — a data-driven problem solver with a background in biology, healthcare, and business. I’m currently completing a dual Master’s in Business Administration and Data Science at Willamette University.
-</p>
-<p>
-My passion for data began in the dental clinic, where I saw firsthand how operational insights could improve systems and outcomes. That experience fueled my interest in analytics, financial modeling, and machine learning.
-</p>
-<p>
-From building an AI system to detect market manipulation in real-time trading data to designing an Opportunity Index for Oregon counties, I thrive at the intersection of technology, impact, and strategy.
-</p>
-<p>
-I'm eager to take on roles in data science, consulting, or finance where I can continue learning and delivering meaningful results.
-</p>
-                        <div class="skills">
-                          <div class="skill-item">Python</div>
-                          <div class="skill-item">SQL</div>
-                          <div class="skill-item">Pandas</div>
-                          <div class="skill-item">Scikit-learn</div>
-                          <div class="skill-item">R</div>
-                          <div class="skill-item">Tableau</div>
-                          <div class="skill-item">Power BI</div>
-                          <div class="skill-item">Machine Learning</div>
-                          <div class="skill-item">Data Visualization</div>
-                          <div class="skill-item">Business Strategy</div>
-</div>
-
-                        </div>
+                        <h3>My Journey into Data Science</h3>
+                        <p>
+                            Hi, I'm Ghson Alotibi — a data-driven problem solver with a background in biology, healthcare, and business. I'm currently completing a dual Master's in Business Administration and Data Science at Willamette University.
+                        </p>
+                        <p>
+                            My passion for data began in the dental clinic, where I saw firsthand how operational insights could improve systems and outcomes. That experience fueled my interest in analytics, financial modeling, and machine learning.
+                        </p>
+                        <p>
+                            From building an AI system to detect market manipulation in real-time trading data to designing an Opportunity Index for Oregon counties, I thrive at the intersection of technology, impact, and strategy.
+                        </p>
+                        <p>
+                            I'm eager to take on roles in data science, consulting, or finance where I can continue learning and delivering meaningful results.
+                        </p>
                     </div>
+                </div>
+                <div class="skills">
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">SQL</div>
+                    <div class="skill-item">R</div>
+                    <div class="skill-item">Machine Learning</div>
+                    <div class="skill-item">Tableau</div>
+                    <div class="skill-item">Power BI</div>
+                    <div class="skill-item">JavaScript</div>
+                    <div class="skill-item">Data Visualization</div>
+                    <div class="skill-item">Business Strategy</div>
+                    <div class="skill-item">Project Management</div>
                 </div>
             </section>
 
             <section id="resume" class="content-section">
                 <h2 class="section-title">Resume</h2>
                 <div class="resume-section">
-                    <p>Download my complete resume to learn more about my background, education, and experience.</p>
-                    <a href="your-resume.pdf" class="resume-btn" target="_blank">
+                    <p>Download my complete resume or explore the details below.</p>
+                    <a href="#" class="resume-btn">
                         <i class="fas fa-download"></i> Download Resume PDF
                     </a>
-                    <a href="#resume-online" class="resume-btn">
-                        <i class="fas fa-eye"></i> View Online Resume
-                    </a>
+                </div>
+
+                <div class="resume-details">
+                    <div class="resume-section-title">Education</div>
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">MBA & MS in Data Science</div>
+                                <div class="item-company">Willamette University</div>
+                            </div>
+                            <div class="item-date">Expected August 2025</div>
+                        </div>
+                        <div class="item-description">
+                            <ul>
+                                <li>Treasurer, SHRM Student Chapter</li>
+                                <li>Member, Accounting & Finance Association</li>
+                                <li>Relevant Coursework: Machine Learning, Strategic Management, Financial Analysis, Cloud Computing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resume-section-title">Professional Experience</div>
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Program Associate</div>
+                                <div class="item-company">Willamette University - Executive Development Center</div>
+                            </div>
+                            <div class="item-date">Oct 2024 – Present</div>
+                        </div>
+                        <div class="item-description">
+                            <ul>
+                                <li>Managed registration, attendance tracking, and materials for executive programs</li>
+                                <li>Automated survey analysis and improved documentation procedures</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Consultant (Graduate Project)</div>
+                                <div class="item-company">City of Hood River</div>
+                            </div>
+                            <div class="item-date">Jan 2024 – Apr 2024</div>
+                        </div>
+                        <div class="item-description">
+                            <ul>
+                                <li>Proposed incentive models to promote middle-income housing development</li>
+                                <li>Conducted stakeholder research and presented findings to city leadership</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Office Administrator</div>
+                                <div class="item-company">Dussmann Gulf LLC</div>
+                            </div>
+                            <div class="item-date">Jan 2020 – Dec 2022</div>
+                        </div>
+                        <div class="item-description">
+                            <ul>
+                                <li>Implemented a scheduling system, reducing overtime by 10%</li>
+                                <li>Improved inventory management, cutting waste by 15%</li>
+                                <li>Led onboarding and training, enhancing satisfaction by 25%</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Loyalty Program Officer</div>
+                                <div class="item-company">Asala Holding</div>
+                            </div>
+                            <div class="item-date">Dec 2018 – Dec 2019</div>
+                        </div>
+                        <div class="item-description">
+                            <ul>
+                                <li>Achieved 90% first-contact resolution for customer complaints</li>
+                                <li>Managed data collection for 100+ tenants to enhance app engagement</li>
+                                <li>Reported bugs and collaborated on UI/UX improvements</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -444,46 +637,61 @@ I'm eager to take on roles in data science, consulting, or finance where I can c
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Data Science Capstone Project (Market Manipulation Detection System) </h3>
-                 
+                            <h3 class="project-title">Market Manipulation Detection System</h3>
                             <p class="project-description">
-  Built a real-time system using Alpaca API and SEC filings to detect algorithmic market abuse. Used Random Forest, XGBoost, and LSTM to classify manipulation events based on tick-level data.
-</p>
+                                Built a real-time system using Alpaca API and SEC filings to detect algorithmic market abuse. Used Random Forest, XGBoost, and LSTM to classify manipulation events based on tick-level data. This capstone project demonstrates advanced machine learning applications in financial markets.
+                            </p>
                             <div class="project-tech">
-                              <span class="tech-tag">Python</span>
-                              <span class="tech-tag">PostgreSQL</span>
-                              <span class="tech-tag">XGBoost</span>
-                              <span class="tech-tag">LSTM</span>
-                        </div>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">XGBoost</span>
+                                <span class="tech-tag">LSTM</span>
+                                <span class="tech-tag">Alpaca API</span>
+                            </div>
                             <div class="project-links">
-                              <a href="#" class="project-link">View Project</a>
-                              <a href="https://github.com/ghsona/market-manipulation" class="project-link">GitHub</a>
+                                <a href="https://github.com/ghsona/market-manipulation" class="project-link">GitHub</a>
+                            </div>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-img">
-                            <i class="fas fa-brain"></i>
+                            <i class="fas fa-home"></i>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Machine Learning Prediction Model</h3>
+                            <h3 class="project-title">Housing Development Incentive Models</h3>
                             <p class="project-description">
-                                Developed a predictive model to [specific problem]. Achieved [specific results/accuracy]. This project taught me advanced feature engineering techniques and model optimization strategies.
-                                <br><br>
-                                <strong>What I accomplished:</strong> [Specific achievements]<br>
-                                <strong>How I did it:</strong> [Methodology]<br>
-                                <strong>Results:</strong> [Quantifiable outcomes]<br>
-                                <strong>Skills learned:</strong> [New concepts/techniques]
+                                Developed comprehensive incentive models for the City of Hood River to promote middle-income housing development. Conducted stakeholder research and presented strategic recommendations to city leadership for policy implementation.
                             </p>
                             <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">TensorFlow</span>
-                                <span class="tech-tag">Jupyter</span>
-                                <span class="tech-tag">SQL</span>
+                                <span class="tech-tag">Financial Modeling</span>
+                                <span class="tech-tag">R</span>
+                                <span class="tech-tag">Data Analysis</span>
+                                <span class="tech-tag">Policy Research</span>
                             </div>
                             <div class="project-links">
                                 <a href="#" class="project-link">View Details</a>
-                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">IntalHub – Startup Platform</h3>
+                            <p class="project-description">
+                                Created a platform that connects international students to U.S. job opportunities. Built the website prototype, designed a go-to-market strategy, and pitched to universities for pilot partnerships. Developed comprehensive business model and financial projections.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Business Strategy</span>
+                                <span class="tech-tag">HTML/CSS</span>
+                                <span class="tech-tag">Financial Modeling</span>
+                                <span class="tech-tag">Market Research</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ghsona/intalhub" class="project-link">GitHub</a>
                             </div>
                         </div>
                     </div>
@@ -493,47 +701,18 @@ I'm eager to take on roles in data science, consulting, or finance where I can c
                             <i class="fas fa-chart-bar"></i>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Data Visualization Dashboard</h3>
+                            <h3 class="project-title">Oregon Opportunity Index</h3>
                             <p class="project-description">
-                                Created an interactive dashboard for [specific use case]. The dashboard provides real-time insights and helps stakeholders make data-driven decisions.
-                                <br><br>
-                                <strong>What I accomplished:</strong> [Specific achievements]<br>
-                                <strong>How I did it:</strong> [Tools and methods used]<br>
-                                <strong>Results:</strong> [Impact and feedback]<br>
-                                <strong>Skills learned:</strong> [New visualization techniques]
+                                Designed and developed a comprehensive Opportunity Index for Oregon counties, combining economic, social, and demographic indicators. Created interactive dashboards and visualizations to help policymakers identify areas for strategic investment and development.
                             </p>
                             <div class="project-tech">
-                                <span class="tech-tag">Tableau</span>
                                 <span class="tech-tag">Python</span>
-                                <span class="tech-tag">D3.js</span>
-                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Tableau</span>
+                                <span class="tech-tag">Statistical Analysis</span>
+                                <span class="tech-tag">Data Visualization</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="project-link">Live Demo</a>
-                                <a href="#" class="project-link">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-img">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <div class="project-content">
-                          <h3 class="project-title">IntalHub – Startup Platform</h3>
-<p class="project-description">
-  Created a platform that connects international students to U.S. job opportunities. Built the website prototype, designed a go-to-market strategy, and pitched to universities for pilot partnerships.
-</p>
-<div class="project-tech">
-  <span class="tech-tag">Business Strategy</span>
-  <span class="tech-tag">HTML/CSS</span>
-  <span class="tech-tag">Financial Modeling</span>
-</div>
-<div class="project-links">
-  <a href="#" class="project-link">View Slides</a>
-  <a href="https://github.com/ghsona/intalhub" class="project-link">GitHub</a>
-</div>
-
+                                <a href="#" class="project-link">View Dashboard</a>
                             </div>
                         </div>
                     </div>
@@ -543,7 +722,7 @@ I'm eager to take on roles in data science, consulting, or finance where I can c
             <section id="contact" class="content-section">
                 <h2 class="section-title">Let's Connect</h2>
                 <div class="contact-content">
-                    <p>I'm always interested in discussing new opportunities, collaborating on projects, brain storming, or simply connecting. Feel free to reach out!</p>
+                    <p>I'm always interested in discussing new opportunities, collaborating on projects, brainstorming, or simply connecting. Feel free to reach out!</p>
                     <div class="contact-info">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
@@ -559,6 +738,11 @@ I'm eager to take on roles in data science, consulting, or finance where I can c
                             <i class="fab fa-github"></i>
                             <h3>GitHub</h3>
                             <a href="https://github.com/GHSONA" target="_blank">View my code</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <h3>Phone</h3>
+                            <a href="tel:+15412923354">541 292 3354</a>
                         </div>
                     </div>
                 </div>
@@ -595,6 +779,14 @@ I'm eager to take on roles in data science, consulting, or finance where I can c
             } else {
                 header.style.background = 'rgba(255, 255, 255, 0.95)';
             }
+        });
+
+        // Mobile menu toggle (if you want to add mobile menu functionality)
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
         });
     </script>
 </body>
