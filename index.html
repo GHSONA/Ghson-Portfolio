@@ -268,6 +268,29 @@ section.hero{padding:4rem 0 3rem}
 
 <div class="project-card">
 <div class="project-content">
+<div class="project-subtitle">Team Project | Saudi Market (Tadawul)</div>
+<h3 class="project-title">Ultra Investment Platform</h3>
+<p class="project-description">A platform that helps investors evaluate companies listed on the Saudi Stock Exchange, with a transparent scoring model that explains every recommendation.</p>
+<div class="project-highlights"><ul>
+<li><strong>Built ETL pipelines</strong> that load Saudi CMA financial datasets (assets, revenue, debt, net income) and Yahoo Finance data into a DuckDB data warehouse</li>
+<li><strong>Designed a rule-based scoring engine</strong> covering ROE, profit margin, revenue growth, debt-to-equity, and analyst consensus, with all rules kept in one config so strategy changes don't touch the agent</li>
+<li><strong>Developed an investment agent</strong> that queries the warehouse, scores each company out of 10, and returns a BUY/HOLD/SELL call, risk level, supporting reasons, and a plain-English summary alongside a CMA market snapshot</li>
+<li><strong>Structured the backend in modular layers:</strong> connectors, pipelines, warehouse, agents, and a raw/processed/curated data lake</li>
+</ul></div>
+<div class="project-tech">
+<span class="tech-tag">Python</span>
+<span class="tech-tag">DuckDB</span>
+<span class="tech-tag">Pandas</span>
+<span class="tech-tag">FastAPI</span>
+<span class="tech-tag">ETL</span>
+<span class="tech-tag">Scoring Engine</span>
+</div>
+<div class="project-links"><a href="https://github.com/GHSONA/Ultra-Investment" class="project-link" target="_blank">View Code</a></div>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-content">
 <div class="project-subtitle">Capstone Project | Aug 2025</div>
 <h3 class="project-title">Market Manipulation Detection System</h3>
 <p class="project-description">A real-time system for detecting anomalous trading patterns and algorithmic market manipulation from live market data.</p>
